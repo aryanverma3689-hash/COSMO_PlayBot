@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOAT</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="theme-default">
+    <div class="background-effects">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar glass-panel">
+            <div class="brand">
+                <div class="logo">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <h2>GOAT</h2>
+            </div>
+
+            <div class="mood-selector">
+                <h3>Persona</h3>
+                <div class="mood-options">
+                    <button class="mood-btn active" data-mode="0">
+                        <i class="fa-solid fa-user-tie"></i> Professional
+                    </button>
+                    <button class="mood-btn" data-mode="1">
+                        <i class="fa-solid fa-fire"></i> Angry
+                    </button>
+                    <button class="mood-btn" data-mode="2">
+                        <i class="fa-solid fa-face-laugh-squint"></i> Funny
+                    </button>
+                    <button class="mood-btn" data-mode="3">
+                        <i class="fa-solid fa-cloud-rain"></i> Sad
+                    </button>
+                </div>
+            </div>
+
+            <button id="reset-btn" class="action-btn">
+                <i class="fa-solid fa-rotate-right"></i> Reset Session
+            </button>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area glass-panel">
+            <header class="chat-header">
+                <div class="current-persona">
+                    <div class="avatar status-indicator"></div>
+                    <div>
+                        <h3 id="header-title">Professional GOAT</h3>
+                        <p id="header-status">Online and ready to help</p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="chat-messages" id="chat-messages">
+                <!-- Welcome Message -->
+                <div class="message bot-message intro-animation">
+                    <div class="message-avatar">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Welcome to GOAT. How can I assist you today?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <form id="chat-form">
+                    <input type="text" id="user-input" placeholder="Message GOAT..." autocomplete="off">
+                    <button type="submit" id="send-btn" disabled>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
