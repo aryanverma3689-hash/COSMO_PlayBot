@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentMode = 0;
 
     const personas = {
-        0: { title: "Professional GOAT", status: "Online and ready to help", theme: "theme-default" },
-        1: { title: "Angry GOAT", status: "Do not test my patience", theme: "theme-angry" },
-        2: { title: "Funny GOAT", status: "Ready to crack a joke!", theme: "theme-funny" },
-        3: { title: "Sad GOAT", status: "Sigh... I'm here if you need me", theme: "theme-sad" }
+        0: { title: "Professional GOAT", status: "Online and ready to help", theme: "theme-default", icon: "images/goat_professional.png" },
+        1: { title: "Angry GOAT", status: "Do not test my patience", theme: "theme-angry", icon: "images/goat_angry.png" },
+        2: { title: "Funny GOAT", status: "Ready to crack a joke!", theme: "theme-funny", icon: "images/goat_funny.png" },
+        3: { title: "Sad GOAT", status: "Sigh... I'm here if you need me", theme: "theme-sad", icon: "images/goat_sad.png" }
     };
 
     async function loadHistory() {
@@ -33,6 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.className = persona.theme;
             headerTitle.textContent = persona.title;
             headerStatus.textContent = persona.status;
+            avatar.style.backgroundImage = `url('${persona.icon}')`;
+            avatar.style.backgroundSize = 'cover';
+            avatar.style.backgroundPosition = 'center';
             
             // Update mode buttons
             moodBtns.forEach(b => b.classList.remove('active'));
@@ -78,6 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.className = persona.theme;
             headerTitle.textContent = persona.title;
             headerStatus.textContent = persona.status;
+            avatar.style.backgroundImage = `url('${persona.icon}')`;
+            avatar.style.backgroundSize = 'cover';
+            avatar.style.backgroundPosition = 'center';
 
             // Optional: Send a visual notification in chat that persona changed
             appendSystemMessage(`Switched to ${persona.title} persona.`);

@@ -1,6 +1,6 @@
 :root {
     /* Base Variables */
-    --font-primary: 'Inter', sans-serif;
+    --font-primary: 'Fredoka', sans-serif;
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 24px;
@@ -137,11 +137,10 @@ body {
 
 .glass-panel {
     background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.8);
     border-radius: var(--radius-lg);
-    transition: all 0.8s ease;
+    transition: all 0.3s ease;
 }
 
 /* Sidebar */
@@ -346,12 +345,14 @@ body {
     padding: var(--spacing-md);
     border-radius: var(--radius-md);
     line-height: 1.5;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.6);
 }
 
 .bot-message .message-content {
     background: var(--bot-msg-bg);
-    border: 1px solid var(--glass-border);
     border-top-left-radius: 4px;
 }
 
@@ -416,23 +417,26 @@ body {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: none;
+    border: 2px solid #000;
     background: var(--accent-color);
     color: white;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
 }
 
 #send-btn:hover:not(:disabled) {
     background: var(--accent-hover);
-    transform: scale(1.05);
+    transform: scale(1.15) rotate(-10deg);
 }
 
 #send-btn:disabled {
     background: var(--text-secondary);
+    box-shadow: none;
+    border-color: transparent;
     opacity: 0.5;
     cursor: not-allowed;
 }
@@ -538,4 +542,32 @@ body.theme-sad .bot-message {
     .chat-input-container {
         padding-bottom: 24px; /* Extra padding for mobile bottom bar */
     }
+}
+
+/* Chat Bubble Avatars */
+.bot-message .message-avatar i {
+    display: none;
+}
+
+.bot-message .message-avatar {
+    background-size: cover;
+    background-position: center;
+    border: none;
+}
+
+body:not([class*="theme-"]) .bot-message .message-avatar,
+body.theme-default .bot-message .message-avatar {
+    background-image: url('images/goat_professional.png');
+}
+
+body.theme-angry .bot-message .message-avatar {
+    background-image: url('images/goat_angry.png');
+}
+
+body.theme-funny .bot-message .message-avatar {
+    background-image: url('images/goat_funny.png');
+}
+
+body.theme-sad .bot-message .message-avatar {
+    background-image: url('images/goat_sad.png');
 }
