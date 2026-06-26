@@ -128,27 +128,25 @@ body {
     position: absolute;
     top: -50px;
     font-size: 2rem;
-    animation-name: fall;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
     user-select: none;
-    display: block;
+    display: inline-block;
     z-index: 10;
+    will-change: transform, opacity;
 }
 
-.o1 { left: 10%; animation-duration: 12s; animation-delay: 0s; }
-.o2 { left: 30%; animation-duration: 18s; animation-delay: 2s; font-size: 3rem; }
-.o3 { left: 50%; animation-duration: 15s; animation-delay: 1s; }
-.o4 { left: 70%; animation-duration: 10s; animation-delay: 4s; font-size: 2.5rem; }
-.o5 { left: 85%; animation-duration: 14s; animation-delay: 0s; }
-.o6 { left: 95%; animation-duration: 19s; animation-delay: 3s; }
-.o7 { left: 20%; animation-duration: 11s; animation-delay: 5s; }
-.o8 { left: 60%; animation-duration: 13s; animation-delay: 2s; }
+.o1 { left: 10%; animation: fall 12s linear infinite 0s; }
+.o2 { left: 30%; font-size: 3rem; animation: fall 18s linear infinite 2s; }
+.o3 { left: 50%; animation: fall 15s linear infinite 1s; }
+.o4 { left: 70%; font-size: 2.5rem; animation: fall 10s linear infinite 4s; }
+.o5 { left: 85%; animation: fall 14s linear infinite 0s; }
+.o6 { left: 95%; animation: fall 19s linear infinite 3s; }
+.o7 { left: 20%; animation: fall 11s linear infinite 5s; }
+.o8 { left: 60%; animation: fall 13s linear infinite 2s; }
 
 @keyframes fall {
     0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
-    5% { opacity: 1; }
-    95% { opacity: 1; }
+    5% { transform: translateY(5vh) rotate(18deg); opacity: 1; }
+    95% { transform: translateY(95vh) rotate(342deg); opacity: 1; }
     100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
 }
 
