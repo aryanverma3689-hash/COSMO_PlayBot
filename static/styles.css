@@ -1,6 +1,6 @@
 :root {
     /* Base Variables */
-    --font-primary: 'Fredoka', sans-serif;
+    --font-primary: 'Poppins', sans-serif;
     --radius-sm: 8px;
     --radius-md: 16px;
     --radius-lg: 24px;
@@ -13,50 +13,50 @@
     
     /* Theme Default (Cosmo Buddy) */
 body.theme-default {
-    --bg-color: #6a0572;
-    --glass-bg: rgba(255, 255, 255, 0.9);
-    --text-primary: #1a1a2e;
-    --text-secondary: #4a4a4a;
-    --accent-color: #fca311;
-    --accent-hover: #e59800;
-    --user-msg-bg: #fca311;
-    --bot-msg-bg: #ffffff;
+    --bg-color: #1a0b2e;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --accent-color: #bb86fc;
+    --accent-hover: #9965f4;
+    --user-msg-bg: rgba(187, 134, 252, 0.2);
+    --bot-msg-bg: rgba(255, 255, 255, 0.1);
 }
 
 /* Theme Angry (Grumpy Alien) */
 body.theme-angry {
-    --bg-color: #0b525b;
-    --glass-bg: rgba(255, 255, 255, 0.9);
-    --text-primary: #1a1a2e;
-    --text-secondary: #4a4a4a;
-    --accent-color: #ef233c;
-    --accent-hover: #d90429;
-    --user-msg-bg: #ef233c;
-    --bot-msg-bg: #ffffff;
+    --bg-color: #2e0b11;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --accent-color: #ff5252;
+    --accent-hover: #ff1744;
+    --user-msg-bg: rgba(255, 82, 82, 0.2);
+    --bot-msg-bg: rgba(255, 255, 255, 0.1);
 }
 
 /* Theme Funny (Goofy Bot) */
 body.theme-funny {
-    --bg-color: #274c77;
-    --glass-bg: rgba(255, 255, 255, 0.9);
-    --text-primary: #1a1a2e;
-    --text-secondary: #4a4a4a;
-    --accent-color: #ffd166;
-    --accent-hover: #ffb703;
-    --user-msg-bg: #ffd166;
-    --bot-msg-bg: #ffffff;
+    --bg-color: #0d233a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --accent-color: #00e5ff;
+    --accent-hover: #00b8d4;
+    --user-msg-bg: rgba(0, 229, 255, 0.2);
+    --bot-msg-bg: rgba(255, 255, 255, 0.1);
 }
 
 /* Theme Sad (Sad Moon) */
 body.theme-sad {
-    --bg-color: #1a1a2e;
-    --glass-bg: rgba(255, 255, 255, 0.9);
-    --text-primary: #1a1a2e;
-    --text-secondary: #4a4a4a;
-    --accent-color: #48cae4;
-    --accent-hover: #00b4d8;
-    --user-msg-bg: #48cae4;
-    --bot-msg-bg: #ffffff;
+    --bg-color: #0a0a0a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --accent-color: #64b5f6;
+    --accent-hover: #42a5f5;
+    --user-msg-bg: rgba(100, 181, 246, 0.2);
+    --bot-msg-bg: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -68,6 +68,8 @@ body.theme-sad {
 body {
     font-family: var(--font-primary);
     background-color: var(--bg-color);
+    background-image: radial-gradient(circle at top right, rgba(255,255,255,0.05), transparent 50%),
+                      radial-gradient(circle at bottom left, rgba(255,255,255,0.05), transparent 50%);
     color: var(--text-primary);
     height: 100vh;
     height: 100dvh;
@@ -90,26 +92,28 @@ body {
 
 .space-obj {
     position: absolute;
+    top: -100px;
     font-size: 2rem;
-    opacity: 0.6;
+    opacity: 0.8;
     animation: fall linear infinite;
     user-select: none;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
 .o1 { left: 10%; animation-duration: 12s; animation-delay: 0s; }
-.o2 { left: 30%; animation-duration: 8s; animation-delay: 2s; font-size: 3rem; }
+.o2 { left: 30%; animation-duration: 18s; animation-delay: 2s; font-size: 3rem; }
 .o3 { left: 50%; animation-duration: 15s; animation-delay: 1s; }
 .o4 { left: 70%; animation-duration: 10s; animation-delay: 4s; font-size: 2.5rem; }
 .o5 { left: 85%; animation-duration: 14s; animation-delay: 0s; }
-.o6 { left: 95%; animation-duration: 9s; animation-delay: 3s; }
+.o6 { left: 95%; animation-duration: 19s; animation-delay: 3s; }
 .o7 { left: 20%; animation-duration: 11s; animation-delay: 5s; }
 .o8 { left: 60%; animation-duration: 13s; animation-delay: 2s; }
 
 @keyframes fall {
-    0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
     10% { opacity: 1; }
     90% { opacity: 1; }
-    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    100% { transform: translateY(120vh) rotate(360deg); opacity: 0; }
 }
 
 /* Layout */
@@ -125,9 +129,10 @@ body {
 
 .glass-panel {
     background: var(--glass-bg);
-    border: 3px solid #1a1a2e;
-    box-shadow: 8px 8px 0 rgba(26, 26, 46, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     border-radius: var(--radius-lg);
+    backdrop-filter: blur(16px);
     transition: all 0.3s ease;
 }
 
@@ -149,12 +154,12 @@ body {
 .logo {
     width: 44px;
     height: 44px;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     background-image: url('/static/images/cosmo_logo.png');
     background-size: cover;
     background-position: center;
-    border: 2px solid #1a1a2e;
-    box-shadow: 2px 2px 0 rgba(26, 26, 46, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
@@ -333,10 +338,11 @@ body {
     border-radius: var(--radius-md);
     line-height: 1.5;
     font-size: 1rem;
-    font-weight: 500;
-    border: 2px solid #1a1a2e;
-    box-shadow: 3px 3px 0 rgba(26, 26, 46, 0.8);
+    font-weight: 400;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
     color: var(--text-primary);
+    backdrop-filter: blur(8px);
 }
 
 .bot-message .message-content {
@@ -381,31 +387,39 @@ body {
 #chat-form {
     display: flex;
     gap: var(--spacing-md);
-    background: rgba(0, 0, 0, 0.2);
-    padding: var(--spacing-xs);
-    border-radius: var(--radius-full);
-    border: 1px solid var(--glass-border);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    border: none;
 }
 
 #user-input {
     flex: 1;
-    background: transparent;
-    border: none;
-    padding: var(--spacing-sm) var(--spacing-lg);
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-full);
     color: var(--text-primary);
     font-size: 1rem;
     font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+#user-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
 }
 
 #user-input:focus {
     outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 #send-btn {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 2px solid var(--accent-color);
+    border: none;
     background: var(--accent-color);
     color: white;
     cursor: pointer;
@@ -413,7 +427,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 #send-btn:hover:not(:disabled) {
@@ -549,9 +563,11 @@ body.theme-sad .bot-message {
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    background: var(--accent-color);
-    border: 2px solid #1a1a2e;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
     color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 body:not([class*="theme-"]) .bot-message .message-avatar::after,
